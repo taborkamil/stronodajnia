@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#2c7a4b">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Stronodajnia","url":"https://stronodajnia.pl","logo":"https://stronodajnia.pl/icon-512.png","telephone":"+48516892178","email":"kontakt@stronodajnia.pl"}</script>
+<title>Stronodajnia – strony internetowe dla lokalnych firm</title>
+<meta name="description" content="Ładne, proste strony internetowe dla salonów, gabinetów i warsztatów z Krakowa i okolic. Najpierw bezpłatny projekt, potem decydujesz. 400 zł jednorazowo.">
+<meta name="theme-color" content="#13241b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5f6f1;
+  --card:#ffffff;
+  --ink:#13241b;
+  --soft:#56645b;
+  --line:#e0e5dc;
+  --green:#2c7a4b;
+  --green-d:#1d5a36;
+  --butter:#ffe27a;
+  --butter-l:#fff4c8;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,svg{display:block}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.disp{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.03em}
+h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.03em;font-size:clamp(36px,5vw,60px);line-height:1.02;margin-bottom:18px}
+h2 em,h1 em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.lead{color:var(--soft);font-size:18.5px;max-width:56ch;margin-bottom:48px}
+section{padding:110px 0}
+.todo{background:#ffd9d9;color:#8a1c1c;border-radius:4px;padding:0 6px;font-weight:700}
+
+/* przyciski */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff!important;text-decoration:none;font-weight:700;padding:16px 26px;border-radius:999px;font-size:16.5px;border:0;cursor:pointer;white-space:nowrap;transition:transform .25s var(--ease),background .2s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 26px -14px rgba(19,36,27,.6)}
+.btn svg{width:18px;height:18px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.green{background:var(--green)}
+.btn.green:hover{background:var(--green-d)}
+.btn.butter{background:var(--butter);color:var(--ink)!important}
+.btn.ghost{background:transparent;color:var(--ink)!important;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff!important}
+.btn.small{padding:10px 18px;font-size:14.5px}
+
+/* nagłówek */
+header{position:fixed;top:12px;left:0;right:0;z-index:50;pointer-events:none}
+.navbar{pointer-events:auto;max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 10px 10px 18px;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(19,36,27,.08);box-shadow:0 10px 30px -22px rgba(19,36,27,.5);transition:box-shadow .3s,background .3s}
+header.scrolled .navbar{background:rgba(255,255,255,.9);box-shadow:0 16px 40px -24px rgba(19,36,27,.55)}
+@media (max-width:1220px){header{left:12px;right:12px}}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:34px;height:34px;border-radius:11px;background:var(--green);display:grid;place-items:center;flex:none}
+.logo b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.03em}
+.links{display:flex;gap:4px;align-items:center;font-weight:600;font-size:15px}
+.links a.nl{text-decoration:none;color:var(--soft);padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
+.links a.nl:hover{background:rgba(19,36,27,.06);color:var(--ink)}
+@media (max-width:900px){.links a.nl{display:none}}
+@media (max-width:480px){.links .long{display:none}}
+@media (min-width:481px){.links .short{display:none}}
+
+/* hero */
+.hero{position:relative;padding:150px 0 90px;overflow:hidden}
+.topo{position:absolute;inset:0;z-index:0;opacity:.55;pointer-events:none;
+  background-image:radial-gradient(circle at 85% 30%,rgba(255,226,122,.55),transparent 42%),radial-gradient(circle at 10% 90%,rgba(44,122,75,.12),transparent 40%)}
+.topo svg{position:absolute;right:-10%;top:-5%;width:80%;height:auto;opacity:.5}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr;gap:56px}}
+.kicker{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);padding:7px 16px 7px 8px;border-radius:999px;font-size:14px;font-weight:600;color:var(--soft);margin-bottom:28px}
+.kicker b{background:var(--butter);color:var(--ink);border-radius:999px;padding:3px 10px;font-size:12.5px}
+.hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(50px,7.2vw,98px);line-height:.94;letter-spacing:-.045em}
+.hero h1 em{color:var(--green);font-size:1.06em}
+.hero .sub{font-size:clamp(18px,2vw,21px);color:var(--soft);max-width:44ch;margin-top:26px}
+
+/* konfigurator */
+.try{margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 30px 50px -40px rgba(19,36,27,.5);max-width:520px}
+.try label{display:block;font-size:13.5px;font-weight:700;color:var(--soft);margin:0 0 8px 4px}
+.field{display:flex;align-items:center;gap:10px;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:4px 4px 4px 16px;transition:border-color .2s,box-shadow .2s}
+.field:focus-within{border-color:var(--green);box-shadow:0 0 0 4px rgba(44,122,75,.14)}
+.field input{flex:1;min-width:0;border:0;background:transparent;font:600 18px "Manrope",sans-serif;color:var(--ink);padding:12px 0;outline:none}
+.field input::placeholder{color:#9aa69e}
+.field .pen{width:38px;height:38px;border-radius:12px;background:var(--butter);display:grid;place-items:center;flex:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:600 14.5px "Manrope",sans-serif;padding:8px 14px;border-radius:999px;cursor:pointer;transition:all .2s var(--ease)}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.try-note{font-size:13.5px;color:var(--soft);margin:12px 4px 0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* telefon */
+.stage{position:relative;display:flex;justify-content:center;min-height:620px;align-items:center}
+.halo{position:absolute;width:520px;max-width:100%;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 200deg,var(--butter-l),#e5f1e8,var(--butter-l));filter:blur(4px);opacity:.9}
+.phone{position:relative;z-index:2;width:300px;border-radius:46px;background:#0d1611;padding:11px;box-shadow:0 50px 80px -36px rgba(19,36,27,.65),inset 0 0 0 1.5px #27342c;transform:rotate(-3deg);transition:transform .8s var(--ease)}
+.stage:hover .phone{transform:rotate(0deg) translateY(-6px)}
+.screen{--s-bg:#f6f1ec;--s-ink:#2b1d1a;--s-acc:#b9814f;--s-soft:#efd9c3;--s-font:"Instrument Serif",serif;--s-w:400;
+  position:relative;border-radius:36px;overflow:hidden;height:600px;background:var(--s-bg);color:var(--s-ink);transition:background .6s var(--ease),color .6s var(--ease)}
+.island{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:90px;height:26px;background:#0d1611;border-radius:20px;z-index:5}
+.s-status{display:flex;justify-content:space-between;padding:14px 26px 0;font-size:11px;font-weight:700;opacity:.8}
+.s-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 20px 0;font-size:10.5px;font-weight:700}
+.s-nav i{width:18px;height:2px;background:currentColor;box-shadow:0 5px 0 currentColor,0 -5px 0 currentColor;border-radius:2px}
+.s-hero{padding:22px 20px 0}
+.s-kind{font-size:11px;font-weight:700;color:var(--s-acc);transition:color .6s}
+.s-name{font-family:var(--s-font);font-weight:var(--s-w);font-size:44px;line-height:.95;letter-spacing:-.02em;margin-top:6px;word-break:break-word;transition:font-size .3s}
+.s-sub{font-size:12px;opacity:.75;margin-top:10px;line-height:1.45;max-width:24ch}
+.s-btn{display:inline-flex;margin-top:14px;background:var(--s-ink);color:var(--s-bg);font-size:11.5px;font-weight:700;padding:9px 15px;border-radius:999px;transition:background .6s,color .6s}
+.s-img{margin:18px 20px 0;height:150px;border-radius:999px 999px 18px 18px;background:var(--s-soft);position:relative;overflow:hidden;transition:background .6s,border-radius .6s}
+.s-img::before{content:"";position:absolute;left:50%;top:26%;transform:translateX(-50%);width:34%;aspect-ratio:1;border-radius:50%;background:var(--s-acc);opacity:.55;box-shadow:0 80px 0 30px var(--s-acc);transition:background .6s,box-shadow .6s}
+.s-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 20px 0}
+.s-card{background:rgba(255,255,255,.75);border-radius:12px;padding:9px 11px;font-size:10px;line-height:1.3;color:#1a1a1a}
+.s-card b{display:block;font-size:16px;font-family:"Bricolage Grotesque",sans-serif}
+.s-card .st{color:#c98a1e;letter-spacing:1px}
+.s-card .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#3e9b63;margin-right:4px}
+.s-call{position:absolute;left:14px;right:14px;bottom:14px;background:var(--s-acc);color:#fff;border-radius:999px;text-align:center;font-size:12px;font-weight:700;padding:12px;transition:background .6s}
+.screen.dark .s-card{background:rgba(255,255,255,.08);color:#fff}
+.screen.dark .s-call{color:#16202c}
+.float{position:absolute;z-index:3;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:13.5px;font-weight:700;box-shadow:0 18px 34px -20px rgba(19,36,27,.55);display:flex;align-items:center;gap:9px;white-space:nowrap}
+.float span{width:28px;height:28px;border-radius:9px;background:var(--butter-l);display:grid;place-items:center}
+.float svg{width:16px;height:16px;color:var(--green)}
+.f1{top:10%;left:2%}.f2{top:44%;right:0}.f3{bottom:12%;left:6%}
+@media (max-width:560px){.float{display:none}.stage{min-height:0}}
+@media (prefers-reduced-motion:no-preference){
+  .float{animation:bob 6s ease-in-out infinite}
+  .f2{animation-delay:-2s}.f3{animation-delay:-4s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+}
+
+/* pasek branż */
+.marquee{background:var(--ink);color:#fff;overflow:hidden;padding:22px 0;position:relative}
+.track{display:flex;gap:40px;width:max-content;animation:scroll 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{display:flex;align-items:center;gap:40px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:22px;white-space:nowrap}
+.track span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--butter)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;gap:16px 28px}}
+
+/* porównanie */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:860px){.compare{grid-template-columns:1fr}}
+.cmp{border-radius:28px;padding:36px;border:1px solid var(--line);background:var(--card)}
+.cmp.good{background:var(--ink);color:#fff;border-color:var(--ink);position:relative;overflow:hidden}
+.cmp.good::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:var(--green);opacity:.5}
+.cmp h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;margin-bottom:6px;position:relative;z-index:1}
+.cmp .tagline{color:var(--soft);font-size:15.5px;margin-bottom:24px;position:relative;z-index:1}
+.cmp.good .tagline{color:rgba(255,255,255,.7)}
+.cmp ul{list-style:none;display:grid;gap:14px;position:relative;z-index:1}
+.cmp li{display:flex;gap:12px;align-items:flex-start}
+.cmp li svg{width:20px;height:20px;flex:none;margin-top:3px}
+.cmp .no svg{color:#b8463a}
+.cmp .no{color:var(--soft)}
+.cmp.good li svg{color:var(--butter)}
+
+/* kroki */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:32px;position:relative;transition:transform .35s var(--ease),box-shadow .35s}
+.step:hover{transform:translateY(-6px);box-shadow:0 30px 50px -36px rgba(19,36,27,.55)}
+.step .n{width:52px;height:52px;border-radius:16px;background:var(--butter);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:24px;margin-bottom:22px}
+.step h3{font-size:21px;margin-bottom:8px}
+.step p{color:var(--soft);font-size:16px}
+.step .when{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13.5px;font-weight:700;color:var(--green)}
+.step .when::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+/* funkcje */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:1000px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.feat-grid{grid-template-columns:1fr}}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;transition:border-color .25s,transform .3s var(--ease)}
+.feat:hover{border-color:var(--green);transform:translateY(-3px)}
+.feat .ic{width:44px;height:44px;border-radius:13px;background:#e8f2ec;display:grid;place-items:center;margin-bottom:16px;color:var(--green)}
+.feat .ic svg{width:22px;height:22px}
+.feat b{display:block;font-size:17px;margin-bottom:4px}
+.feat span{font-size:15px;color:var(--soft)}
+
+/* przykłady */
+.examples{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media (max-width:980px){.ex-grid{grid-template-columns:1fr;max-width:540px}}
+.ex{perspective:900px}
+.browser{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 30px 50px -38px rgba(19,36,27,.6);transition:transform .5s var(--ease),box-shadow .5s;transform-style:preserve-3d}
+.ex:hover .browser{transform:rotateX(4deg) rotateY(-5deg) translateY(-6px);box-shadow:0 40px 60px -36px rgba(19,36,27,.6)}
+.bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#eef1ec;border-bottom:1px solid var(--line)}
+.bar i{width:9px;height:9px;border-radius:50%;background:#cfd6cc}
+.bar u{margin-left:10px;flex:1;text-decoration:none;font-size:11px;color:#7a877f;background:#fff;border-radius:6px;padding:3px 10px}
+.mock{height:260px;padding:22px;position:relative;overflow:hidden}
+.mock .mk-k{font-size:11px;font-weight:700}
+.mock .mt{line-height:.95;letter-spacing:-.02em;margin-top:6px}
+.mock .ms{font-size:11.5px;margin-top:10px;max-width:20ch;line-height:1.45}
+.mock .mb{display:inline-block;margin-top:14px;font-size:11px;font-weight:700;padding:8px 13px;border-radius:999px}
+.mock .art{position:absolute;right:20px;bottom:20px;top:20px;width:40%}
+.mk1{background:#f6f1ec;color:#2b1d1a}.mk1 .mk-k{color:#b9814f}
+.mk1 .mt{font-family:"Instrument Serif",serif;font-size:44px}
+.mk1 .mb{background:#2b1d1a;color:#fff}
+.mk1 .art{border-radius:999px 999px 14px 14px;background:linear-gradient(170deg,#efd9c3,#c99a73)}
+.mk2{background:#f3f0f8;color:#33264a}.mk2 .mk-k{color:#8a68b8}
+.mk2 .mt{font-family:"Instrument Serif",serif;font-style:italic;font-size:42px}
+.mk2 .mb{background:#8a68b8;color:#fff}
+.mk2 .art{border-radius:120px 14px 120px 14px;background:radial-gradient(circle at 40% 40%,#fff 0 12%,transparent 13%),linear-gradient(140deg,#e4daf1,#b9a3db)}
+.mk3{background:#16202c;color:#fff}.mk3 .mk-k{color:#e8a33d}
+.mk3 .mt{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:36px}
+.mk3 .ms{color:#aab4c0}
+.mk3 .mb{background:#e8a33d;color:#16202c}
+.mk3 .art{clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);background:repeating-linear-gradient(135deg,#e8a33d 0 14px,#d48f2a 14px 28px)}
+.ex h3{font-size:19px;margin-top:18px}
+.ex p{color:var(--soft);font-size:15px}
+.ex-note{margin-top:34px;font-size:14.5px;color:var(--soft)}
+
+/* cennik */
+.price-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+@media (max-width:900px){.price-grid{grid-template-columns:1fr}}
+.price{background:var(--ink);color:#fff;border-radius:32px;padding:44px;position:relative;overflow:hidden}
+.price .glow{position:absolute;right:-90px;top:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,var(--green),transparent 70%);opacity:.9}
+.price>*{position:relative;z-index:1}
+.price .label{display:inline-block;font-weight:700;font-size:14px;background:rgba(255,226,122,.16);color:var(--butter);padding:5px 12px;border-radius:999px}
+.price .amount{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(72px,9vw,112px);line-height:1;letter-spacing:-.05em;margin:18px 0 6px}
+.price .amount small{font-size:22px;letter-spacing:0;font-weight:600;color:rgba(255,255,255,.7);margin-left:6px}
+.price .plus{font-size:18px;color:rgba(255,255,255,.85)}
+.price ul{list-style:none;margin:30px 0 34px;display:grid;gap:13px}
+.price li{display:flex;gap:12px;color:rgba(255,255,255,.92)}
+.price li svg{width:20px;height:20px;color:var(--butter);flex:none;margin-top:3px}
+.side{background:var(--card);border:1px solid var(--line);border-radius:32px;padding:38px;display:flex;flex-direction:column;gap:22px}
+.side h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em}
+.side .row{padding-bottom:20px;border-bottom:1px solid var(--line)}
+.side .row:last-child{border-bottom:0;padding-bottom:0}
+.side .row b{display:block;font-size:17px;margin-bottom:3px}
+.side .row span{color:var(--soft);font-size:15.5px}
+
+/* o mnie */
+.about{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;align-items:center}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:30px}}
+.avatar{aspect-ratio:1;max-width:320px;border-radius:36px;background:var(--butter);display:grid;place-items:center;position:relative;overflow:hidden}
+.avatar::after{content:"";position:absolute;inset:auto -20% -40% -20%;height:70%;background:var(--green);border-radius:50% 50% 0 0}
+.avatar span{position:relative;z-index:1;font-family:"Instrument Serif",serif;font-style:italic;font-size:150px;line-height:1;color:var(--ink);margin-bottom:30px}
+.about p{max-width:58ch;margin-bottom:16px;font-size:18px}
+.about .sign{font-family:"Instrument Serif",serif;font-style:italic;font-size:30px;color:var(--green)}
+
+/* faq */
+.faq-sec{background:var(--card);border-top:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:20px}}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-weight:700;font-size:18.5px}
+.qa button:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:6px}
+.qa .pl{width:32px;height:32px;border-radius:50%;background:var(--paper);display:grid;place-items:center;flex:none;transition:transform .35s var(--ease),background .2s}
+.qa .pl svg{width:14px;height:14px}
+.qa.open .pl{transform:rotate(45deg);background:var(--butter)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding:0 40px 24px 0;color:var(--soft);max-width:66ch}
+
+/* kontakt */
+.contact{padding:30px 0 110px}
+.c-box{background:var(--green);color:#fff;border-radius:40px;padding:70px 56px;position:relative;overflow:hidden}
+@media (max-width:640px){.c-box{padding:48px 26px;border-radius:30px}}
+.c-box .ring{position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,226,122,.18)}
+.c-box>*{position:relative;z-index:1}
+.c-box h2{color:#fff;max-width:16ch}
+.c-box .lead{color:rgba(255,255,255,.85)}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px}
+@media (max-width:700px){.c-grid{grid-template-columns:1fr}}
+.c-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:24px;padding:26px;text-decoration:none;display:block;transition:background .25s,transform .3s var(--ease)}
+.c-card:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+.c-card .k{font-size:14.5px;color:rgba(255,255,255,.75);margin-bottom:6px}
+.c-card .v{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:26px;line-height:1.15;word-break:break-word}
+.c-note{margin-top:6px;color:rgba(255,255,255,.85);font-size:15.5px}
+.c-wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:28px;align-items:start}
+@media (max-width:900px){.c-wrap{grid-template-columns:1fr}}
+.c-side{display:grid;gap:14px}
+.c-or{font-weight:700;color:var(--butter)}
+.c-side .c-card .v{font-size:21px;word-break:normal;overflow-wrap:anywhere}
+.form{background:#fff;color:var(--ink);border-radius:28px;padding:30px;display:grid;gap:16px;box-shadow:0 40px 60px -40px rgba(0,0,0,.5)}
+@media (max-width:640px){.form{padding:22px;border-radius:22px}}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+.fl{display:grid;gap:6px}
+.fl span{font-size:14px;font-weight:700}
+.fl em{font-style:normal;font-weight:500;color:var(--soft)}
+.fl input,.fl textarea{width:100%;font:500 16.5px "Manrope",sans-serif;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px;outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical}
+.fl input:focus,.fl textarea:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(44,122,75,.14)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--soft);line-height:1.5}
+.consent input{width:19px;height:19px;margin-top:2px;accent-color:var(--green);flex:none}
+.consent a{color:var(--green);font-weight:600}
+.btn.big{width:100%;padding:18px 26px;font-size:17px}
+.btn[disabled]{opacity:.7;cursor:wait;transform:none}
+.f-msg{font-weight:600;font-size:15px;min-height:1px}
+.f-msg.ok{color:var(--green)}.f-msg.err{color:#b8463a}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form.done{text-align:center;padding:50px 30px}
+.form.done h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:30px;letter-spacing:-.02em;margin-bottom:8px}
+.form.done p{color:var(--soft)}
+.form.done .tick{width:64px;height:64px;border-radius:50%;background:var(--butter);display:grid;place-items:center;margin:0 auto 18px}
+
+.c-soc{display:flex;gap:10px;flex-wrap:wrap}
+.c-soc a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);color:#fff;text-decoration:none;font-weight:700;font-size:15px;transition:background .25s,transform .3s var(--ease)}
+.c-soc a:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+.f-soc{display:inline-flex;gap:14px;margin-left:14px;vertical-align:middle}
+.f-soc a{display:inline-flex;color:inherit}
+.f-soc a:hover{color:var(--ink)}
+footer{padding:0 0 46px;font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:26px}
+
+/* mobilny przycisk */
+.m-cta{display:none}
+@media (max-width:700px){.m-cta{display:flex;position:fixed;left:14px;right:14px;bottom:calc(66px + env(safe-area-inset-bottom));z-index:40;justify-content:center;box-shadow:0 10px 30px rgba(19,36,27,.25);transform:translateY(calc(100% + 90px));transition:transform .4s var(--ease)}.m-cta.show{transform:none}}
+
+/* płynne pojawianie się */
+@media (prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+  .hero .intro>*{opacity:0;transform:translateY(22px);animation:up .9s var(--ease) forwards}
+  .hero .intro>*:nth-child(2){animation-delay:.08s}.hero .intro>*:nth-child(3){animation-delay:.16s}.hero .intro>*:nth-child(4){animation-delay:.24s}.hero .intro>*:nth-child(5){animation-delay:.32s}
+  .stage{opacity:0;animation:up 1.1s .2s var(--ease) forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <nav class="navbar" aria-label="Główna">
+    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="3" y="4" width="18" height="16" rx="3" fill="#ffe27a"/><rect x="3" y="4" width="18" height="5" rx="2" fill="#13241b" opacity=".18"/><circle cx="6.5" cy="6.5" r="1" fill="#2c7a4b"/><circle cx="9.5" cy="6.5" r="1" fill="#2c7a4b"/><rect x="6" y="12" width="7" height="2" rx="1" fill="#2c7a4b"/><rect x="6" y="15.5" width="10" height="2" rx="1" fill="#2c7a4b" opacity=".55"/></svg></span><b>Stronodajnia</b></a>
+    <div class="links">
+      <a class="nl" href="#jak">Jak to działa</a>
+      <a class="nl" href="#przyklady">Przykłady</a>
+      <a class="nl" href="#cennik">Cennik</a>
+      <a class="nl" href="#pytania">Pytania</a>
+      <a class="btn green small" href="#kontakt"><span class="long">Zamów bezpłatny projekt</span><span class="short">Darmowy projekt</span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="topo" aria-hidden="true">
+      <svg viewBox="0 0 600 600" fill="none" stroke="#2c7a4b" stroke-width="1.2">
+        <path d="M300 60c120 0 230 90 230 220s-90 250-230 250S60 430 60 300 180 60 300 60z"/>
+        <path d="M300 110c95 0 180 72 180 172s-70 196-180 196-186-76-186-178S205 110 300 110z"/>
+        <path d="M300 160c70 0 132 52 132 124s-52 142-132 142-136-56-136-130 66-136 136-136z"/>
+        <path d="M300 210c45 0 84 34 84 78s-34 90-84 90-88-36-88-82 43-86 88-86z"/>
+        <path d="M300 258c20 0 38 14 38 32s-16 38-38 38-40-16-38-36 18-34 38-34z"/>
+      </svg>
+    </div>
+    <div class="wrap hero-grid">
+      <div class="intro">
+        <div class="kicker"><b>Lokalnie</b>Strony dla firm z Krakowa i okolic</div>
+        <h1>Twoja firma <em>na mapie.</em> I&nbsp;w&nbsp;internecie.</h1>
+        <p class="sub">Robię proste, ładne strony dla salonów, gabinetów i warsztatów. Najpierw dostajesz bezpłatny projekt. Płacisz dopiero, gdy Ci się spodoba.</p>
+        <div class="try">
+          <label for="biz">Sprawdź, jak może wyglądać Twoja strona</label>
+          <div class="field">
+            <input id="biz" type="text" maxlength="28" placeholder="Wpisz nazwę swojej firmy" autocomplete="off">
+            <span class="pen" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#13241b" stroke-width="2.2" stroke-linecap="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg></span>
+          </div>
+          <div class="chips" role="group" aria-label="Branża">
+            <button class="chip" type="button" data-t="fryzjer" aria-pressed="true">Fryzjer</button>
+            <button class="chip" type="button" data-t="kosmetyczka" aria-pressed="false">Kosmetyczka</button>
+            <button class="chip" type="button" data-t="paznokcie" aria-pressed="false">Paznokcie</button>
+            <button class="chip" type="button" data-t="warsztat" aria-pressed="false">Warsztat</button>
+          </div>
+          <p class="try-note">Podgląd zmienia się na żywo. Prawdziwy projekt przygotuję z Twoimi usługami, godzinami i zdjęciami.</p>
+        </div>
+        <div class="actions">
+          <a class="btn green" href="#kontakt">Zamów bezpłatny projekt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn ghost" href="#cennik">Ile to kosztuje?</a>
+        </div>
+      </div>
+
+      <div class="stage" aria-label="Podgląd przykładowej strony na telefonie">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="screen" id="screen">
+            <div class="island"></div>
+            <div class="s-status"><span>9:41</span><span>●●● ▮</span></div>
+            <div class="s-nav"><span id="s-short">Twoja Firma</span><i></i></div>
+            <div class="s-hero">
+              <div class="s-kind" id="s-kind">Salon fryzjerski</div>
+              <div class="s-name" id="s-name">Twoja Firma</div>
+              <div class="s-sub" id="s-sub">Strzyżenie, koloryzacja i upięcia. Zapisy telefoniczne.</div>
+              <span class="s-btn" id="s-btn">Umów wizytę</span>
+            </div>
+            <div class="s-img" id="s-img"></div>
+            <div class="s-cards">
+              <div class="s-card"><b>4,9</b><span class="st">★★★★★</span><br>opinie w Google</div>
+              <div class="s-card"><b>Otwarte</b><span class="dot"></span>dziś do 18:00</div>
+            </div>
+            <div class="s-call" id="s-call">Zadzwoń i umów wizytę</div>
+          </div>
+        </div>
+        <div class="float f1"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>Wygodna na telefonie</div>
+        <div class="float f2"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3"/></svg></span>Klient dzwoni jednym kliknięciem</div>
+        <div class="float f3"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Dojazd w Mapach Google</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-label="Dla kogo robię strony">
+    <div class="track">
+      <span>Salony fryzjerskie</span><span>Gabinety kosmetyczne</span><span>Stylistki paznokci</span><span>Stylistki rzęs</span><span>Warsztaty samochodowe</span><span>Firmy remontowe</span><span>Fizjoterapeuci</span><span>Barberzy</span>
+      <span aria-hidden="true">Salony fryzjerskie</span><span aria-hidden="true">Gabinety kosmetyczne</span><span aria-hidden="true">Stylistki paznokci</span><span aria-hidden="true">Stylistki rzęs</span><span aria-hidden="true">Warsztaty samochodowe</span><span aria-hidden="true">Firmy remontowe</span><span aria-hidden="true">Fizjoterapeuci</span><span aria-hidden="true">Barberzy</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2 class="rv">Klienci szukają Cię w Google. <em>Co tam znajdują?</em></h2>
+      <p class="lead rv d1">Masz świetne opinie, ale sama wizytówka to za mało, żeby nowy klient od razu zadzwonił.</p>
+      <div class="compare">
+        <div class="cmp rv d1">
+          <h3>Sama wizytówka Google</h3>
+          <p class="tagline">Tak wygląda dziś wiele świetnych firm.</p>
+          <ul>
+            <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Brak cennika, więc klient dzwoni z pytaniami albo rezygnuje</li>
+            <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Kilka przypadkowych zdjęć zamiast Twoich najlepszych prac</li>
+            <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Firmy ze stroną wyglądają poważniej i zbierają klientów</li>
+          </ul>
+        </div>
+        <div class="cmp good rv d2">
+          <h3>Wizytówka i własna strona</h3>
+          <p class="tagline">Wszystko, czego klient potrzebuje, w jednym miejscu.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Usługi, ceny i godziny od razu na wierzchu</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Galeria Twoich prac i opinie z Google</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Przycisk „Zadzwoń” i dojazd jednym kliknięciem</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="jak" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="rv">Jak to działa</h2>
+      <p class="lead rv d1">Bez technicznego żargonu i bez płacenia z góry za coś, czego jeszcze nie widzisz.</p>
+      <div class="steps">
+        <div class="step rv d1"><div class="n">1</div><h3>Bezpłatny projekt</h3><p>Na podstawie Twojej wizytówki Google przygotowuję projekt strony z Twoją nazwą, usługami, godzinami i mapą dojazdu.</p><span class="when">zwykle w 1–2 dni</span></div>
+        <div class="step rv d2"><div class="n">2</div><h3>Poprawki i zdjęcia</h3><p>Podsyłasz swoje zdjęcia i cennik, mówisz, co zmienić. Poprawiam, aż będzie dokładnie tak, jak chcesz.</p><span class="when">kilka dni</span></div>
+        <div class="step rv d3"><div class="n">3</div><h3>Strona działa</h3><p>Rejestrujemy domenę na Ciebie, uruchamiam stronę i dodaję ją do Twojej wizytówki Google. Potem dbam, żeby działała.</p><span class="when">od razu po akceptacji</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2 class="rv">Co dostajesz</h2>
+      <p class="lead rv d1">Wszystko, czego szuka klient, zanim do Ciebie zadzwoni. Nic, czego musiałbyś się uczyć obsługiwać.</p>
+      <div class="feat-grid">
+        <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><b>Wersja na telefon</b><span>Większość klientów wchodzi z komórki.</span></div>
+        <div class="feat rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3"/></svg></div><b>Przycisk „Zadzwoń”</b><span>Jedno dotknięcie i klient ma Cię na linii.</span></div>
+        <div class="feat rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><b>Usługi i cennik</b><span>Koniec z pytaniami „ile kosztuje…”.</span></div>
+        <div class="feat rv d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><b>Godziny otwarcia</b><span>Z informacją, czy teraz jest otwarte.</span></div>
+        <div class="feat rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div><b>Mapa i dojazd</b><span>Nawigacja w Mapach Google jednym kliknięciem.</span></div>
+        <div class="feat rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><b>Opinie z Google</b><span>Twoja ocena i link do opinii klientów.</span></div>
+        <div class="feat rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-8 8"/></svg></div><b>Galeria prac</b><span>Twoje zdjęcia, które najlepiej sprzedają.</span></div>
+        <div class="feat rv d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><b>Zgodność z RODO</b><span>Polityka prywatności bez Twojego wysiłku.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="examples" id="przyklady">
+    <div class="wrap">
+      <h2 class="rv">Każda strona <em>inna.</em></h2>
+      <p class="lead rv d1">Kolory, czcionki i układ dobieram do branży i charakteru firmy. Poniżej projekty dla wymyślonych firm, żeby pokazać, jak to może wyglądać.</p>
+      <div class="ex-grid">
+        <article class="ex rv d1">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><u>salonlilia.pl</u></div>
+            <div class="mock mk1"><div class="mk-k">Salon fryzjerski</div><div class="mt">Lilia</div><div class="ms">Koloryzacja, strzyżenie i fryzury okolicznościowe.</div><span class="mb">Umów wizytę</span><div class="art"></div></div></div>
+          <h3>Salon fryzjerski</h3><p>Ciepłe kolory i elegancka czcionka, zdjęcie w kształcie lustra salonowego.</p>
+        </article>
+        <article class="ex rv d2">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><u>gabinetmalwa.pl</u></div>
+            <div class="mock mk2"><div class="mk-k">Gabinet kosmetyczny</div><div class="mt">Malwa</div><div class="ms">Zabiegi na twarz, depilacja i pielęgnacja.</div><span class="mb">Zadzwoń</span><div class="art"></div></div></div>
+          <h3>Gabinet kosmetyczny</h3><p>Spokojna, pudrowa kolorystyka i miękkie kształty.</p>
+        </article>
+        <article class="ex rv d3">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i><u>autozakret.pl</u></div>
+            <div class="mock mk3"><div class="mk-k">Warsztat samochodowy</div><div class="mt">Auto Zakręt</div><div class="ms">Mechanika, opony i klimatyzacja.</div><span class="mb">Zadzwoń po termin</span><div class="art"></div></div></div>
+          <h3>Warsztat samochodowy</h3><p>Mocny kontrast, konkret i szybki kontakt.</p>
+        </article>
+      </div>
+      <p class="ex-note">Nazwy firm w przykładach są wymyślone. Twój projekt powstanie na podstawie Twojej prawdziwej wizytówki.</p>
+    </div>
+  </section>
+
+  <section id="cennik">
+    <div class="wrap">
+      <h2 class="rv">Jedna prosta cena</h2>
+      <p class="lead rv d1">Bez ukrytych kosztów i bez płacenia za projekt, który Ci się nie spodoba.</p>
+      <div class="price-grid">
+        <div class="price rv d1">
+          <div class="glow" aria-hidden="true"></div>
+          <span class="label">Strona dla Twojej firmy</span>
+          <div class="amount">400 zł<small>jednorazowo</small></div>
+          <div class="plus">+ 50 zł miesięcznie za utrzymanie i zmiany</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bezpłatny projekt przed decyzją</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Twoje zdjęcia, cennik i teksty</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Utrzymanie strony w internecie</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Drobne zmiany w ramach abonamentu, np. godziny czy ceny</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Polityka prywatności i podpięcie domeny</li>
+          </ul>
+          <a class="btn butter" href="#kontakt">Zamów bezpłatny projekt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="side rv d2">
+          <h3>Dobrze wiedzieć</h3>
+          <div class="row"><b>Domena jest Twoja</b><span>Adres strony rejestrujemy na Ciebie. Za domenę płacisz bezpośrednio rejestratorowi, zwykle od kilkudziesięciu złotych rocznie.</span></div>
+          <div class="row"><b>Płatność w dwóch częściach</b><span>Połowa po akceptacji projektu, reszta po uruchomieniu strony.</span></div>
+          <div class="row"><b>Zmiany bez stresu</b><span>Nowe godziny, ceny czy zdjęcia? Wystarczy SMS albo mail. Zwykle zmieniam to tego samego dnia.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap about">
+      <div class="avatar rv" aria-hidden="true"><span>K</span></div>
+      <div class="rv d1">
+        <h2>Cześć, jestem Kamil</h2>
+        <p>Mieszkam w okolicach Skawiny i robię strony internetowe dla lokalnych firm. Widzę, ile świetnych salonów i warsztatów ma piękne opinie w Google, a nie ma strony, na której klient sprawdzi usługi, ceny i godziny.</p>
+        <p>Dlatego robię strony szybko, prosto i w rozsądnej cenie. Najpierw pokazuję gotowy projekt, a Ty decydujesz, czy go chcesz.</p>
+        <div class="sign">Kamil</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-sec" id="pytania">
+    <div class="wrap faq-grid">
+      <div>
+        <h2 class="rv">Częste pytania</h2>
+        <p class="lead rv d1">Nie ma tu Twojego pytania? Po prostu zadzwoń albo napisz.</p>
+      </div>
+      <div class="faq rv d1">
+        <div class="qa"><button type="button" aria-expanded="false">Mam Facebooka albo Booksy. Po co mi strona?<span class="pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p>Facebook i Booksy świetnie się sprawdzają, ale to profile wśród setek innych. Strona to Twoje własne miejsce, które pojawia się w Google, zbiera usługi, ceny i godziny w jednym miejscu i może prowadzić do Twojego profilu w Booksy przyciskiem „Umów się”.</p></div></div></div>
+        <div class="qa"><button type="button" aria-expanded="false">Czy projekt naprawdę jest za darmo?<span class="pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p>Tak. Przygotowuję projekt bez opłat i bez zobowiązań. Płacisz dopiero, gdy zdecydujesz, że chcesz uruchomić stronę.</p></div></div></div>
+        <div class="qa"><button type="button" aria-expanded="false">Ile trwa zrobienie strony?<span class="pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p>Projekt zwykle w 1–2 dni. Gdy dostanę Twoje zdjęcia i cennik, gotowa strona działa zwykle w kilka dni.</p></div></div></div>
+        <div class="qa"><button type="button" aria-expanded="false">Muszę się znać na komputerach?<span class="pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p>Nie. Wszystko robię ja. Ty podsyłasz zdjęcia i informacje, a zmiany zgłaszasz SMS-em albo mailem.</p></div></div></div>
+        <div class="qa"><button type="button" aria-expanded="false">Co, jeśli zrezygnuję z abonamentu?<span class="pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p>Domena zostaje Twoja. Przekażę Ci pliki strony, żebyś mógł je przenieść gdzie indziej.</p></div></div></div>
+        <div class="qa"><button type="button" aria-expanded="false">Pracujesz tylko w Krakowie?<span class="pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><div><p>Najczęściej z firmami z Krakowa i okolic, ale wszystko da się załatwić zdalnie, więc odległość nie jest problemem.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="c-box rv">
+        <div class="ring" aria-hidden="true"></div>
+        <h2>Zamów bezpłatny projekt swojej strony</h2>
+        <p class="lead">Zostaw swój numer, a oddzwonię. Wystarczy nazwa firmy i miejscowość, resztę znajdę w Twojej wizytówce Google.</p>
+        <div class="c-wrap">
+          <form class="form" id="lead" name="projekt" method="POST" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" value="f0cb2d70-fe1f-45bc-aa9b-b74cfd41ed0e">
+            <input type="hidden" name="subject" value="Nowe zgłoszenie ze stronodajnia.pl">
+            <input type="hidden" name="from_name" value="Stronodajnia – formularz">
+            <input type="hidden" name="redirect" value="https://stronodajnia.pl/dziekujemy.html">
+            <p class="hp" aria-hidden="true"><label>Nie wypełniaj: <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></p>
+            <div class="row2">
+              <label class="fl"><span>Imię</span><input name="imie" type="text" autocomplete="given-name" required></label>
+              <label class="fl"><span>Nazwa firmy</span><input id="f-firma" name="firma" type="text" autocomplete="organization" required></label>
+            </div>
+            <div class="row2">
+              <label class="fl"><span>Telefon</span><input name="telefon" type="tel" inputmode="tel" autocomplete="tel" required placeholder="np. 500 600 700"></label>
+              <label class="fl"><span>Miejscowość</span><input name="miejscowosc" type="text" autocomplete="address-level2" required></label>
+            </div>
+            <label class="fl"><span>E-mail <em>(opcjonalnie)</em></span><input name="email" type="email" autocomplete="email"></label>
+            <label class="fl"><span>Coś jeszcze? <em>(opcjonalnie)</em></span><textarea name="wiadomosc" rows="3" placeholder="np. najlepiej dzwonić po 15:00"></textarea></label>
+            <label class="consent"><input type="checkbox" name="zgoda" value="tak" required><span>Wyrażam zgodę na kontakt w sprawie bezpłatnego projektu strony. Szczegóły w <a href="/polityka-prywatnosci.html" target="_blank" rel="noopener">polityce prywatności</a>.</span></label>
+            <button class="btn butter big" type="submit" id="f-btn">Wyślij i odbierz bezpłatny projekt</button>
+            <p class="f-msg" id="f-msg" role="status" aria-live="polite"></p>
+          </form>
+          <div class="c-side">
+            <p class="c-or">Wolisz od razu porozmawiać?</p>
+            <a class="c-card" href="tel:+48516892178"><div class="k">Telefon</div><div class="v">516 892 178</div></a>
+            <a class="c-card" href="mailto:kontakt@stronodajnia.pl?subject=Bezp%C5%82atny%20projekt%20strony"><div class="k">E-mail</div><div class="v">kontakt@stronodajnia.pl</div></a>
+            <div class="c-soc"><a href="https://www.facebook.com/profile.php?id=61596384306278" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z"/></svg>Facebook</a><a href="https://www.instagram.com/stronodajnia/" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></div>
+            <p class="c-note">Oddzwaniam zwykle tego samego dnia. Projekt nic nie kosztuje i do niczego nie zobowiązuje.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Stronodajnia · <a href="tel:+48516892178">516 892 178</a> · <a href="mailto:kontakt@stronodajnia.pl">kontakt@stronodajnia.pl</a></span><span><a href="/polityka-prywatnosci.html">Polityka prywatności</a><span class="f-soc"><a href="https://www.facebook.com/profile.php?id=61596384306278" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z"/></svg></a><a href="https://www.instagram.com/stronodajnia/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></span></span></div></footer>
+
+<a class="btn green m-cta" id="mcta" href="#kontakt">Zamów bezpłatny projekt</a>
+
+<script>
+(function(){
+  // nagłówek i przycisk mobilny
+  var hdr=document.getElementById('hdr'), mcta=document.getElementById('mcta');
+  function onScroll(){var y=scrollY;hdr.classList.toggle('scrolled',y>10);mcta.classList.toggle('show',y>600&&y<document.body.scrollHeight-innerHeight-500);}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // pojawianie się przy przewijaniu
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+
+  // FAQ
+  document.querySelectorAll('.qa button').forEach(function(b){
+    b.addEventListener('click',function(){var q=b.parentElement,o=q.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+  });
+
+  // podgląd na żywo
+  var T={
+    fryzjer:{bg:'#f6f1ec',ink:'#2b1d1a',acc:'#b9814f',soft:'#efd9c3',font:'"Instrument Serif",serif',w:400,kind:'Salon fryzjerski',sub:'Strzyżenie, koloryzacja i upięcia. Zapisy telefoniczne.',btn:'Umów wizytę',call:'Zadzwoń i umów wizytę',r:'999px 999px 18px 18px',dark:false},
+    kosmetyczka:{bg:'#f3f0f8',ink:'#33264a',acc:'#8a68b8',soft:'#e4daf1',font:'"Instrument Serif",serif',w:400,kind:'Gabinet kosmetyczny',sub:'Zabiegi na twarz, depilacja i pielęgnacja skóry.',btn:'Zobacz zabiegi',call:'Zadzwoń i umów zabieg',r:'120px 18px 120px 18px',dark:false},
+    paznokcie:{bg:'#fcf2f0',ink:'#4a1f2b',acc:'#b9566d',soft:'#f5d6dc',font:'"Bricolage Grotesque",sans-serif',w:700,kind:'Stylizacja paznokci',sub:'Manicure hybrydowy, pedicure i zdobienia.',btn:'Zobacz cennik',call:'Zadzwoń i zarezerwuj termin',r:'28px',dark:false},
+    warsztat:{bg:'#16202c',ink:'#ffffff',acc:'#e8a33d',soft:'#2a3644',font:'"Bricolage Grotesque",sans-serif',w:800,kind:'Warsztat samochodowy',sub:'Mechanika, opony i klimatyzacja. Pon–Sob.',btn:'Usługi i ceny',call:'Zadzwoń po termin',r:'6px',dark:true}
+  };
+  var scr=document.getElementById('screen'),$=function(id){return document.getElementById(id)};
+  var input=$('biz'),cur='fryzjer';
+  function apply(t){
+    var c=T[t];cur=t;
+    scr.style.setProperty('--s-bg',c.bg);scr.style.setProperty('--s-ink',c.ink);scr.style.setProperty('--s-acc',c.acc);
+    scr.style.setProperty('--s-soft',c.soft);scr.style.setProperty('--s-font',c.font);scr.style.setProperty('--s-w',c.w);
+    scr.classList.toggle('dark',c.dark);
+    $('s-kind').textContent=c.kind;$('s-sub').textContent=c.sub;$('s-btn').textContent=c.btn;$('s-call').textContent=c.call;
+    $('s-img').style.borderRadius=c.r;
+    document.querySelectorAll('.chip').forEach(function(ch){ch.setAttribute('aria-pressed',ch.dataset.t===t)});
+  }
+  function setName(){
+    var v=(input.value||'').trim()||'Twoja Firma';
+    $('s-name').textContent=v;$('s-short').textContent=v.length>18?v.slice(0,17)+'…':v;
+    var L=v.length;$('s-name').style.fontSize=(L<=10?44:L<=16?34:L<=22?27:22)+'px';
+  }
+  document.querySelectorAll('.chip').forEach(function(ch){ch.addEventListener('click',function(){apply(ch.dataset.t)})});
+  input.addEventListener('input',setName);
+  apply('fryzjer');setName();
+
+  // przeniesienie nazwy firmy z podglądu do formularza
+  var ff=$('f-firma');
+  input.addEventListener('change',function(){if(ff&&!ff.value&&input.value.trim())ff.value=input.value.trim();});
+
+  // wysyłka formularza bez przeładowania strony
+  var form=$('lead'),msg=$('f-msg'),btn=$('f-btn');
+  form.addEventListener('submit',function(e){
+    if(!window.fetch||location.protocol==='file:')return;
+    e.preventDefault();
+    btn.disabled=true;btn.textContent='Wysyłam…';msg.className='f-msg';msg.textContent='';
+    var fd=new FormData(form);fd.delete('redirect');fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+      .then(function(r){return r.json()}).then(function(j){if(!j||!j.success)throw 0;
+        form.classList.add('done');
+        form.innerHTML='<div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#13241b" stroke-width="2.6" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Dziękuję, mam to!</h3><p>Odezwę się zwykle tego samego dnia, a bezpłatny projekt przygotuję w 1–2 dni.</p>';
+      })
+      .catch(function(){btn.disabled=false;btn.textContent='Wyślij i odbierz bezpłatny projekt';msg.className='f-msg err';msg.textContent='Nie udało się wysłać. Spróbuj jeszcze raz albo zadzwoń: 516 892 178.';});
+  });
+})();
+</script>
+</body>
+</html>
